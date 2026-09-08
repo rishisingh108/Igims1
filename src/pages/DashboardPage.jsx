@@ -3,6 +3,7 @@ import { ShieldCheck, QrCode, Download, LogOut } from 'lucide-react';
 import Sticker from '../components/common/Sticker';
 import { useIsNarrow } from '../hooks/useIsNarrow';
 import AuthForm from '../components/auth/AuthForm';
+import DynamicBackground from '../components/common/DynamicBackground';
 import { useAuth } from '../context/AuthContext';
 
 export default function DashboardPage() {
@@ -19,8 +20,47 @@ export default function DashboardPage() {
 
   if (!user) {
     return (
-      <section style={{ padding: '150px 24px 100px', maxWidth: 600, margin: '0 auto' }}>
-        <AuthForm />
+      <section style={{ padding: '150px 24px 100px', maxWidth: 700, margin: '0 auto', position: 'relative', overflow: 'hidden' }}>
+        {/* Locally-scoped copy of the site's dynamic particle background, so this
+            page always shows it even if it's ever reached outside the main App shell. */}
+        <DynamicBackground />
+
+        {/* Extra, much more visible ambient glows so the dynamic feel actually reads
+            on this otherwise-empty page (the global canvas alone is very subtle). */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-10%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 700,
+            height: 700,
+            maxWidth: '90vw',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(179, 18, 58, 0.30) 0%, transparent 70%)',
+            filter: 'blur(40px)',
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-15%',
+            left: '10%',
+            width: 400,
+            height: 400,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(212, 175, 106, 0.16) 0%, transparent 70%)',
+            filter: 'blur(50px)',
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+        />
+
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <AuthForm />
+        </div>
       </section>
     );
   }

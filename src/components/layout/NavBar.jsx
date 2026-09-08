@@ -10,7 +10,7 @@ export default function NavBar({ page, setPage }) {
   const [moreOpen, setMoreOpen] = useState(false);
   const moreRef = useRef(null);
   const narrow = useIsNarrow(768);
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const go = (p) => {
     setPage(p.toLowerCase());
     setOpen(false);
@@ -234,7 +234,7 @@ export default function NavBar({ page, setPage }) {
           />
         </nav>
 
-        {/* Top-Right: Yellow "SIGN IN" button with black border and offset shadow */}
+        {/* Top-Right: "SIGN IN"/"DASHBOARD" + "LOGOUT" (when logged in) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <button
             onClick={() => go('Dashboard')}
@@ -265,6 +265,40 @@ export default function NavBar({ page, setPage }) {
           >
             {user ? 'DASHBOARD' : 'SIGN IN'}
           </button>
+
+          {user && (
+            <button
+              onClick={() => {
+                signOut();
+                go('Home');
+              }}
+              style={{
+                background: 'transparent',
+                color: '#F5F0E8',
+                border: '2px solid rgba(255,255,255,0.25)',
+                borderRadius: 14,
+                padding: '10px 20px',
+                fontWeight: 800,
+                fontSize: 13,
+                letterSpacing: 0.5,
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                display: narrow ? 'none' : 'inline-flex',
+                alignItems: 'center',
+                transition: 'background 0.15s ease, border-color 0.15s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.45)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)';
+              }}
+            >
+              LOGOUT
+            </button>
+          )}
 
           {/* Mobile Hamburger Toggle */}
           <button
@@ -351,6 +385,27 @@ export default function NavBar({ page, setPage }) {
           >
             {user ? 'DASHBOARD' : 'SIGN IN'}
           </button>
+          {user && (
+            <button
+              onClick={() => {
+                signOut();
+                go('Home');
+              }}
+              style={{
+                background: 'transparent',
+                color: '#F5F0E8',
+                border: '2px solid rgba(255,255,255,0.25)',
+                borderRadius: 12,
+                padding: '12px',
+                fontWeight: 800,
+                fontSize: 13,
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+              }}
+            >
+              LOGOUT
+            </button>
+          )}
         </div>
       )}
     </header>
