@@ -44,8 +44,8 @@ export default function SplitPanelSection({ setPage }) {
                 borderRadius: 20,
                 position: 'relative',
                 overflow: 'hidden',
-                background: 'linear-gradient(160deg, #2B0A0A 0%, #150707 100%)',
-                border: '1px solid rgba(179, 18, 58, 0.3)',
+                background: 'linear-gradient(160deg, #380C14 0%, #1A060B 100%)',
+                border: '1px solid rgba(230, 57, 38, 0.35)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
               }}
             >
@@ -70,7 +70,7 @@ export default function SplitPanelSection({ setPage }) {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'rgba(190,20,40,0.08)',
+                  background: 'rgba(230,57,38,0.10)',
                   mixBlendMode: 'color',
                   zIndex: 0,
                 }}
@@ -79,7 +79,7 @@ export default function SplitPanelSection({ setPage }) {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(160deg, rgba(10,5,5,0.05) 0%, rgba(6,3,3,0.65) 100%)',
+                  background: 'linear-gradient(160deg, rgba(20, 5, 8, 0.05) 0%, rgba(20, 5, 8, 0.65) 100%)',
                   zIndex: 0,
                 }}
               />
@@ -93,7 +93,7 @@ export default function SplitPanelSection({ setPage }) {
                   left: 0,
                   right: 0,
                   padding: '24px',
-                  background: 'linear-gradient(0deg, rgba(10, 5, 5, 0.92) 0%, transparent 100%)',
+                  background: 'linear-gradient(0deg, rgba(20, 5, 8, 0.94) 0%, transparent 100%)',
                   zIndex: 1,
                 }}
               >
@@ -131,8 +131,8 @@ export default function SplitPanelSection({ setPage }) {
                 borderRadius: 20,
                 position: 'relative',
                 overflow: 'hidden',
-                background: 'linear-gradient(160deg, #3A0C0C 0%, #150707 100%)',
-                border: '1px solid rgba(176, 141, 87, 0.3)',
+                background: 'linear-gradient(160deg, #3C1210 0%, #1A070A 100%)',
+                border: '1px solid rgba(229, 168, 59, 0.35)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
               }}
             >
@@ -157,7 +157,7 @@ export default function SplitPanelSection({ setPage }) {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'rgba(190,20,40,0.08)',
+                  background: 'rgba(230,57,38,0.10)',
                   mixBlendMode: 'color',
                   zIndex: 0,
                 }}
@@ -166,7 +166,7 @@ export default function SplitPanelSection({ setPage }) {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(160deg, rgba(10,5,5,0.05) 0%, rgba(6,3,3,0.65) 100%)',
+                  background: 'linear-gradient(160deg, rgba(20, 5, 8, 0.05) 0%, rgba(20, 5, 8, 0.65) 100%)',
                   zIndex: 0,
                 }}
               />
@@ -180,7 +180,7 @@ export default function SplitPanelSection({ setPage }) {
                   left: 0,
                   right: 0,
                   padding: '24px',
-                  background: 'linear-gradient(0deg, rgba(10, 5, 5, 0.92) 0%, transparent 100%)',
+                  background: 'linear-gradient(0deg, rgba(20, 5, 8, 0.94) 0%, transparent 100%)',
                   zIndex: 1,
                 }}
               >

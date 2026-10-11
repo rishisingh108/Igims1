@@ -119,7 +119,7 @@ export default function RegistrationModal({
   };
   const inpRO = { ...inp, opacity: 0.6, cursor: 'not-allowed' };
 
-  const focusInp = (e) => { e.target.style.borderColor='rgba(220,38,38,0.6)'; e.target.style.boxShadow='0 0 0 3px rgba(220,38,38,0.08)'; };
+  const focusInp = (e) => { e.target.style.borderColor='rgba(192, 57, 43,0.6)'; e.target.style.boxShadow='0 0 0 3px rgba(192, 57, 43,0.08)'; };
   const blurInp  = (e) => { e.target.style.borderColor='rgba(255,255,255,0.1)'; e.target.style.boxShadow='none'; };
 
   const fields = [
@@ -142,12 +142,12 @@ export default function RegistrationModal({
       {/* Modal panel */}
       <div style={{
         position:'relative', width:'100%', maxWidth:560, maxHeight:'90vh', overflowY:'auto',
-        background:'linear-gradient(160deg,#190808 0%,#0A0505 100%)',
-        border:'1px solid rgba(220,38,38,0.35)', borderRadius:20, padding:'36px 32px',
-        boxShadow:'0 24px 80px rgba(0,0,0,0.8),0 0 80px rgba(220,38,38,0.08)',
+        background:'linear-gradient(160deg,#2E0B14 0%,#160509 100%)',
+        border:'1px solid rgba(230, 57, 38, 0.35)', borderRadius:20, padding:'36px 32px',
+        boxShadow:'0 24px 80px rgba(0,0,0,0.8),0 0 80px rgba(230, 57, 38, 0.12)',
       }}>
         {/* Glow */}
-        <div style={{ position:'absolute', top:-60, right:-60, width:200, height:200, background:'rgba(220,38,38,0.1)', filter:'blur(60px)', borderRadius:'50%', pointerEvents:'none' }} />
+        <div style={{ position:'absolute', top:-60, right:-60, width:200, height:200, background:'rgba(230, 57, 38, 0.14)', filter:'blur(60px)', borderRadius:'50%', pointerEvents:'none' }} />
 
         {/* Close */}
         <button onClick={onClose} style={{ position:'absolute', top:16, right:16, background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:8, width:32, height:32, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', color:'var(--muted)' }}>
@@ -166,7 +166,7 @@ export default function RegistrationModal({
         </div>
 
         {error && (
-          <div style={{ background:'rgba(220,38,38,0.1)', border:'1px solid #DC2626', color:'#ff8f8f', padding:'10px 14px', borderRadius:8, fontSize:13, marginBottom:20 }}>
+          <div style={{ background:'rgba(192, 57, 43,0.1)', border:'1px solid #C0392B', color:'#ff8f8f', padding:'10px 14px', borderRadius:8, fontSize:13, marginBottom:20 }}>
             &#9888; {error}
           </div>
         )}

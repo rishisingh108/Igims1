@@ -109,9 +109,9 @@ export default function DashboardPage({ setPage }) {
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 36, flexWrap: 'wrap', gap: 16 }}>
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(220,38,38,0.1)', border: '1px solid rgba(220,38,38,0.3)', borderRadius: 20, padding: '4px 12px', marginBottom: 12 }}>
-              <ShieldCheck size={12} color="#DC2626" />
-              <span style={{ fontSize: 10, color: '#DC2626', letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 700 }}>Authenticated</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(192, 57, 43,0.1)', border: '1px solid rgba(192, 57, 43,0.3)', borderRadius: 20, padding: '4px 12px', marginBottom: 12 }}>
+              <ShieldCheck size={12} color="#C0392B" />
+              <span style={{ fontSize: 10, color: '#C0392B', letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 700 }}>Authenticated</span>
             </div>
             <h1 className="crx-display" style={{ fontSize: 'clamp(22px,4vw,32px)', color: 'var(--cream)', marginBottom: 6 }}>
               COMMAND CENTER
@@ -125,7 +125,7 @@ export default function DashboardPage({ setPage }) {
             onClick={handleSignOut}
             disabled={signOutLoading}
             className="crx-btn"
-            style={{ background: 'transparent', border: '1px solid rgba(220,38,38,0.35)', color: '#ff8f8f', gap: 8, flexShrink: 0 }}
+            style={{ background: 'transparent', border: '1px solid rgba(192, 57, 43,0.35)', color: '#ff8f8f', gap: 8, flexShrink: 0 }}
           >
             <LogOut size={14} />
             {signOutLoading ? 'SIGNING OUT...' : 'SIGN OUT'}
@@ -135,12 +135,12 @@ export default function DashboardPage({ setPage }) {
         {/* Body */}
         {fetchingReg ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '40px 24px', color: 'var(--muted)', fontSize: 13 }}>
-            <RefreshCw size={16} style={{ animation: 'spin 1s linear infinite', color: '#DC2626' }} />
+            <RefreshCw size={16} style={{ animation: 'spin 1s linear infinite', color: '#C0392B' }} />
             Checking registration status...
           </div>
         ) : fetchError ? (
-          <div style={{ padding: '28px 24px', borderRadius: 14, border: '1px solid rgba(220,38,38,0.3)', background: 'rgba(220,38,38,0.05)', display: 'flex', alignItems: 'center', gap: 12 }}>
-            <AlertTriangle size={20} color="#DC2626" />
+          <div style={{ padding: '28px 24px', borderRadius: 14, border: '1px solid rgba(192, 57, 43,0.3)', background: 'rgba(192, 57, 43,0.05)', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <AlertTriangle size={20} color="#C0392B" />
             <div>
               <p style={{ color: 'var(--cream)', margin: '0 0 4px', fontWeight: 600 }}>Could not load registration</p>
               <p style={{ color: 'var(--muted)', margin: 0, fontSize: 13 }}>{fetchError}</p>
@@ -151,7 +151,7 @@ export default function DashboardPage({ setPage }) {
             {/* Top Cards Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
               {/* Profile card */}
-              <div style={{ padding: '24px', borderRadius: 16, border: '1px solid rgba(220,38,38,0.22)', background: 'linear-gradient(160deg,#1a0808 0%,#0A0505 100%)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', position: 'relative' }}>
+              <div style={{ padding: '24px', borderRadius: 16, border: '1px solid rgba(230, 57, 38, 0.28)', background: 'linear-gradient(160deg, #2E0B14 0%, #160509 100%)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', position: 'relative' }}>
                 <button
                   onClick={() => setShowEditModal(true)}
                   style={{
@@ -165,8 +165,8 @@ export default function DashboardPage({ setPage }) {
                 </button>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(220,38,38,0.12)', border: '1px solid rgba(220,38,38,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <User size={18} color="#DC2626" />
+                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(230, 57, 38, 0.14)', border: '1px solid rgba(230, 57, 38, 0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <User size={18} color="#E63926" />
                   </div>
                   <div>
                     <p style={{ margin: 0, fontSize: 15, color: 'var(--cream)', fontWeight: 700 }}>
@@ -192,7 +192,7 @@ export default function DashboardPage({ setPage }) {
               </div>
 
               {/* Payment status card */}
-              <div style={{ padding: '24px', borderRadius: 16, border: '1px solid rgba(220,38,38,0.18)', background: 'linear-gradient(160deg,#130a05 0%,#0A0505 100%)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ padding: '24px', borderRadius: 16, border: '1px solid rgba(230, 57, 38, 0.22)', background: 'linear-gradient(160deg, #280910 0%, #160509 100%)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <p style={{ margin: 0, fontSize: 10, textTransform: 'uppercase', letterSpacing: 1.8, color: 'var(--muted)' }}>Registration Status</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 36, height: 36, borderRadius: '50%', background: isPaid ? 'rgba(34,197,94,0.12)' : 'rgba(245,158,11,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -223,14 +223,14 @@ export default function DashboardPage({ setPage }) {
             <div style={{
               padding: '28px',
               borderRadius: 16,
-              border: '1px solid rgba(220,38,38,0.25)',
-              background: 'linear-gradient(160deg, #150606 0%, #080303 100%)',
+              border: '1px solid rgba(230, 57, 38, 0.26)',
+              background: 'linear-gradient(160deg, #24080D 0%, #140407 100%)',
               boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <Calendar size={16} color="#DC2626" />
+                    <Calendar size={16} color="#E63926" />
                     <h3 className="crx-display" style={{ fontSize: 18, color: 'var(--cream)', margin: 0 }}>
                       CLAIMED EVENTS ({registeredEvents.length})
                     </h3>
@@ -244,8 +244,8 @@ export default function DashboardPage({ setPage }) {
                   onClick={() => setPage && setPage('events')}
                   className="crx-btn"
                   style={{
-                    background: 'rgba(220,38,38,0.15)',
-                    border: '1px solid rgba(220,38,38,0.4)',
+                    background: 'rgba(192, 57, 43,0.15)',
+                    border: '1px solid rgba(192, 57, 43,0.4)',
                     color: '#fca5a5',
                     fontSize: 11,
                     gap: 6,
@@ -306,8 +306,8 @@ export default function DashboardPage({ setPage }) {
             </div>
           </div>
         ) : (
-          <div style={{ padding: '48px 32px', borderRadius: 16, border: '1px dashed rgba(220,38,38,0.25)', background: 'rgba(220,38,38,0.02)', textAlign: 'center' }}>
-            <ShieldCheck size={40} color="rgba(220,38,38,0.3)" style={{ margin: '0 auto 16px' }} />
+          <div style={{ padding: '48px 32px', borderRadius: 16, border: '1px dashed rgba(192, 57, 43,0.25)', background: 'rgba(192, 57, 43,0.02)', textAlign: 'center' }}>
+            <ShieldCheck size={40} color="rgba(192, 57, 43,0.3)" style={{ margin: '0 auto 16px' }} />
             <h3 style={{ color: 'var(--cream)', fontSize: 18, marginBottom: 8 }}>No Registration Found</h3>
             <p style={{ color: 'var(--muted)', fontSize: 13, marginBottom: 20 }}>
               You haven't registered your details yet. Head to the Events page to pick your events and complete registration.

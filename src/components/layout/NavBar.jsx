@@ -61,10 +61,10 @@ export default function NavBar({ page, setPage }) {
             style={{
               width: 50,
               height: 50,
-              background: '#020101',
-              border: '2px solid #DC2626',
+              background: '#140508',
+              border: '2px solid #E63926',
               borderRadius: 14,
-              boxShadow: '3px 3px 0 #170707, 0 0 14px rgba(179, 18, 58, 0.35)',
+              boxShadow: '3px 3px 0 #2A0810, 0 0 16px rgba(230, 57, 38, 0.4)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -74,11 +74,11 @@ export default function NavBar({ page, setPage }) {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translate(1px, 1px)';
-              e.currentTarget.style.boxShadow = '2px 2px 0 #170707, 0 0 18px rgba(179, 18, 58, 0.5)';
+              e.currentTarget.style.boxShadow = '2px 2px 0 #2A0810, 0 0 20px rgba(230, 57, 38, 0.65)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translate(0, 0)';
-              e.currentTarget.style.boxShadow = '3px 3px 0 #170707, 0 0 14px rgba(179, 18, 58, 0.35)';
+              e.currentTarget.style.boxShadow = '3px 3px 0 #1A080C, 0 0 14px rgba(192, 57, 43, 0.35)';
             }}
           >
             <img
@@ -130,7 +130,7 @@ export default function NavBar({ page, setPage }) {
                   background: 'transparent',
                   color: active ? '#FFFFFF' : 'rgba(255, 255, 255, 0.7)',
                   border: 'none',
-                  borderBottom: active ? '2px solid #DC2626' : '2px solid transparent',
+                  borderBottom: active ? '2px solid #C0392B' : '2px solid transparent',
                   borderRadius: 24,
                   padding: '7px 18px',
                   fontSize: 12.5,
@@ -139,7 +139,7 @@ export default function NavBar({ page, setPage }) {
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  boxShadow: active ? '0 4px 10px -2px rgba(220, 38, 38, 0.45)' : 'none',
+                  boxShadow: active ? '0 4px 10px -2px rgba(192, 57, 43, 0.45)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!active) e.currentTarget.style.color = '#FFFFFF';
@@ -164,7 +164,7 @@ export default function NavBar({ page, setPage }) {
                 background: 'transparent',
                 color: NAV_MORE.some((p) => page === p.toLowerCase()) ? '#FFFFFF' : 'rgba(255, 255, 255, 0.7)',
                 border: 'none',
-                borderBottom: NAV_MORE.some((p) => page === p.toLowerCase()) ? '2px solid #DC2626' : '2px solid transparent',
+                borderBottom: NAV_MORE.some((p) => page === p.toLowerCase()) ? '2px solid #C0392B' : '2px solid transparent',
                 borderRadius: 24,
                 padding: '7px 14px',
                 fontSize: 12.5,
@@ -239,11 +239,11 @@ export default function NavBar({ page, setPage }) {
           <button
             onClick={() => go('Dashboard')}
             style={{
-              background: '#DC2626',
-              color: '#170707',
-              border: '2px solid #170707',
+              background: '#E63926',
+              color: '#FFFFFF',
+              border: '2px solid #2A0810',
               borderRadius: 14,
-              boxShadow: '0 4px 20px rgba(220, 38, 38, 0.35), 3px 3px 0 #170707',
+              boxShadow: '0 4px 20px rgba(230, 57, 38, 0.45), 3px 3px 0 #2A0810',
               padding: '10px 22px',
               fontWeight: 800,
               fontSize: 13,
@@ -256,11 +256,11 @@ export default function NavBar({ page, setPage }) {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translate(1px, 1px)';
-              e.currentTarget.style.boxShadow = '2px 2px 0 #170707';
+              e.currentTarget.style.boxShadow = '2px 2px 0 #2A0810';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translate(0, 0)';
-              e.currentTarget.style.boxShadow = '3px 3px 0 #170707';
+              e.currentTarget.style.boxShadow = '3px 3px 0 #2A0810';
             }}
           >
             {user ? 'DASHBOARD' : 'SIGN IN'}
@@ -272,9 +272,9 @@ export default function NavBar({ page, setPage }) {
             aria-label="Menu"
             className="crx-hamburger-btn"
             style={{
-              background: '#DC2626',
-              border: '2px solid #170707',
-              boxShadow: '2px 2px 0 #170707',
+              background: '#E63926',
+              border: '2px solid #2A0810',
+              boxShadow: '2px 2px 0 #2A0810',
               borderRadius: 12,
               width: 44,
               height: 44,
@@ -285,12 +285,12 @@ export default function NavBar({ page, setPage }) {
             }}
           >
             {open ? (
-              <X size={20} color="#170707" />
+              <X size={20} color="#FFFFFF" />
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                <span style={{ width: 18, height: 2, background: '#170707' }} />
-                <span style={{ width: 18, height: 2, background: '#170707' }} />
-                <span style={{ width: 18, height: 2, background: '#170707' }} />
+                <span style={{ width: 18, height: 2, background: '#FFFFFF' }} />
+                <span style={{ width: 18, height: 2, background: '#FFFFFF' }} />
+                <span style={{ width: 18, height: 2, background: '#FFFFFF' }} />
               </div>
             )}
           </button>
@@ -302,15 +302,15 @@ export default function NavBar({ page, setPage }) {
         <div
           style={{
             marginTop: 14,
-            background: 'rgba(16, 9, 14, 0.96)',
-            border: '2px solid #170707',
+            background: 'rgba(24, 6, 11, 0.96)',
+            border: '2px solid rgba(230, 57, 38, 0.35)',
             borderRadius: 18,
             padding: 16,
             display: 'flex',
             flexDirection: 'column',
             gap: 6,
             backdropFilter: 'blur(20px)',
-            boxShadow: '0 12px 40px rgba(0,0,0,0.8)',
+            boxShadow: '0 12px 40px rgba(0,0,0,0.8), 0 0 30px rgba(230, 57, 38, 0.15)',
           }}
         >
           {[...NAV, ...NAV_MORE].map((p) => (
@@ -321,7 +321,7 @@ export default function NavBar({ page, setPage }) {
                 background: 'transparent',
                 color: page === p.toLowerCase() ? '#fff' : 'rgba(255,255,255,0.7)',
                 border: 'none',
-                borderLeft: page === p.toLowerCase() ? '2px solid #DC2626' : '2px solid transparent',
+                borderLeft: page === p.toLowerCase() ? '2px solid #E63926' : '2px solid transparent',
                 borderRadius: 12,
                 padding: '12px 16px',
                 textAlign: 'left',
@@ -338,9 +338,9 @@ export default function NavBar({ page, setPage }) {
           <button
             onClick={() => go('Dashboard')}
             style={{
-              background: '#DC2626',
-              color: '#170707',
-              border: '2px solid #170707',
+              background: '#E63926',
+              color: '#FFFFFF',
+              border: '2px solid #2A0810',
               borderRadius: 12,
               padding: '12px',
               fontWeight: 800,

@@ -5,8 +5,8 @@ import Sticker from '../components/common/Sticker';
 import { useIsNarrow } from '../hooks/useIsNarrow';
 
 const inputStyle = {
-  background: 'rgba(10, 5, 5, 0.75)',
-  border: '1px solid rgba(179, 18, 58, 0.28)',
+  background: 'rgba(20, 5, 8, 0.75)',
+  border: '1px solid rgba(230, 57, 38, 0.3)',
   borderRadius: 10,
   padding: '12px 14px',
   color: 'var(--paper)',
@@ -87,8 +87,8 @@ export default function ContactPage() {
                 gap: 12,
                 padding: 24,
                 borderRadius: 16,
-                border: '1px solid rgba(179, 18, 58, 0.3)',
-                background: 'linear-gradient(160deg, #181212 0%, #0A0505 100%)',
+                border: '1px solid rgba(230, 57, 38, 0.3)',
+                background: 'linear-gradient(160deg, #2A0910 0%, #160509 100%)',
                 boxShadow: '0 12px 30px rgba(0,0,0,0.5)',
               }}
             >

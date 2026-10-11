@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Lock, LogIn, UserPlus, AlertCircle, CheckCircle, Timer } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -80,8 +80,8 @@ export default function AuthForm({ onSuccess }) {
   };
 
   const focusInp = (e) => {
-    e.target.style.borderColor = 'rgba(220,38,38,0.6)';
-    e.target.style.boxShadow   = '0 0 0 3px rgba(220,38,38,0.08)';
+    e.target.style.borderColor = 'rgba(192, 57, 43,0.6)';
+    e.target.style.boxShadow   = '0 0 0 3px rgba(192, 57, 43,0.08)';
   };
   const blurInp = (e) => {
     e.target.style.borderColor = 'rgba(255,255,255,0.1)';
@@ -92,15 +92,15 @@ export default function AuthForm({ onSuccess }) {
 
   return (
     <div style={{
-      background: 'rgba(255,243,214,0.03)', border: '1px solid rgba(220,38,38,0.35)',
+      background: 'rgba(255,243,214,0.03)', border: '1px solid rgba(192, 57, 43,0.35)',
       borderRadius: 16, padding: 'clamp(24px, 5vw, 40px) clamp(16px, 4vw, 30px)', width: '92%', maxWidth: 420, margin: '0 auto',
-      boxShadow: '0 10px 40px rgba(0,0,0,0.6),0 0 60px rgba(220,38,38,0.07)',
+      boxShadow: '0 10px 40px rgba(0,0,0,0.6),0 0 60px rgba(192, 57, 43,0.07)',
       backdropFilter: 'blur(10px)', position: 'relative', overflow: 'hidden',
       boxSizing: 'border-box',
     }}>
       {/* Ambient glows */}
-      <div style={{ position:'absolute', top:-50, left:-50, width:160, height:160, background:'rgba(220,38,38,0.14)', filter:'blur(50px)', borderRadius:'50%', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:-40, right:-40, width:120, height:120, background:'rgba(220,38,38,0.07)', filter:'blur(40px)', borderRadius:'50%', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', top:-50, left:-50, width:160, height:160, background:'rgba(192, 57, 43,0.14)', filter:'blur(50px)', borderRadius:'50%', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', bottom:-40, right:-40, width:120, height:120, background:'rgba(192, 57, 43,0.07)', filter:'blur(40px)', borderRadius:'50%', pointerEvents:'none' }} />
 
       <h2 className="crx-display" style={{ fontSize:26, color:'var(--cream)', marginBottom:6, textAlign:'center' }}>
         {isLogin ? 'ACCESS TERMINAL' : 'INITIALIZE UPLINK'}
@@ -114,8 +114,8 @@ export default function AuthForm({ onSuccess }) {
         <div style={{
           display:'flex', alignItems:'flex-start', gap:8, padding:'10px 14px',
           borderRadius:8, fontSize:13, marginBottom:18,
-          background: isRateLimit ? 'rgba(245,158,11,0.1)' : 'rgba(220,38,38,0.1)',
-          border: isRateLimit ? '1px solid #f59e0b' : '1px solid #DC2626',
+          background: isRateLimit ? 'rgba(245,158,11,0.1)' : 'rgba(192, 57, 43,0.1)',
+          border: isRateLimit ? '1px solid #f59e0b' : '1px solid #C0392B',
           color: isRateLimit ? '#fcd34d' : '#ff8f8f',
         }}>
           {isRateLimit

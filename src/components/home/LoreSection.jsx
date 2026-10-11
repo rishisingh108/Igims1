@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Reveal from '../common/Reveal';
 import Sticker from '../common/Sticker';
 
@@ -19,7 +19,7 @@ export default function LoreSection() {
               backgroundClip: 'text',
               color: 'transparent',
               margin: '0 0 22px',
-              filter: 'drop-shadow(0 0 20px rgba(179, 18, 58, 0.25))',
+              filter: 'drop-shadow(0 0 20px rgba(192, 57, 43, 0.25))',
             }}
           >
             THE CROWNED DIAGNOSIS

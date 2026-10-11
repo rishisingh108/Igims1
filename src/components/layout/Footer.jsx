@@ -10,8 +10,8 @@ export default function Footer({ setPage }) {
   return (
     <footer
       style={{
-        borderTop: '1px solid rgba(179, 18, 58, 0.25)',
-        background: 'linear-gradient(180deg, transparent 0%, rgba(10, 5, 5, 0.9) 100%)',
+        borderTop: '1px solid rgba(230, 57, 38, 0.28)',
+        background: 'linear-gradient(180deg, transparent 0%, rgba(20, 5, 8, 0.95) 100%)',
         padding: '60px 24px 40px',
         position: 'relative',
         zIndex: 2,

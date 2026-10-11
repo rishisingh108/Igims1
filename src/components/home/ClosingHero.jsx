@@ -11,7 +11,7 @@ export default function ClosingHero({ setPage }) {
         width: '100%',
         maxWidth: '100vw',
         contain: 'paint',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(179, 18, 58, 0.15) 0%, transparent 70%), linear-gradient(160deg, #240C0C 0%, #020101 100%)',
+        background: 'radial-gradient(ellipse at 50% -10%, rgba(230, 57, 38, 0.28) 0%, rgba(226, 126, 63, 0.14) 40%, transparent 70%), linear-gradient(160deg, #2E0B14 0%, #140508 100%)',
         borderTop: '1px solid var(--hair)',
         borderBottom: '1px solid var(--hair)',
       }}

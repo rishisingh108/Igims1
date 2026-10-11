@@ -73,39 +73,39 @@ export default function Hero({ setPage, revealTitle = true }) {
             <source src="/events-bg.mp4" type="video/mp4" />
           </video>
 
-          {/* Red Color-Tint Layer */}
+          {/* Vermillion Color-Tint Layer */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'rgba(190, 20, 35, 0.12)',
+              background: 'rgba(230, 57, 38, 0.16)',
               mixBlendMode: 'color',
               zIndex: 0,
               pointerEvents: 'none',
             }}
           />
 
-          {/* Light multiply pass */}
+          {/* Light multiply pass with cinnabar undertone */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'rgba(20, 4, 6, 0.1)',
+              background: 'rgba(28, 7, 11, 0.12)',
               mixBlendMode: 'multiply',
               zIndex: 0,
               pointerEvents: 'none',
             }}
           />
 
-          {/* Cosmic Vignette Overlay */}
+          {/* Vermillion & Crimson Vignette Overlay */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               background: `
-                radial-gradient(ellipse at 50% 0%, rgba(179, 18, 58, 0.1), transparent 55%),
-                radial-gradient(ellipse at 50% 50%, rgba(10, 5, 5, 0.2) 0%, rgba(10, 5, 5, 0.42) 65%, rgba(10, 5, 5, 0.72) 100%),
-                linear-gradient(180deg, rgba(10, 5, 5, 0.45) 0%, rgba(10, 5, 5, 0.1) 25%, rgba(10, 5, 5, 0.1) 75%, rgba(10, 5, 5, 0.78) 100%)
+                radial-gradient(ellipse at 50% 0%, rgba(230, 57, 38, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(20, 5, 8, 0.2) 0%, rgba(20, 5, 8, 0.45) 65%, rgba(20, 5, 8, 0.75) 100%),
+                linear-gradient(180deg, rgba(20, 5, 8, 0.45) 0%, rgba(20, 5, 8, 0.08) 25%, rgba(20, 5, 8, 0.08) 75%, rgba(20, 5, 8, 0.82) 100%)
               `,
               zIndex: 1,
               pointerEvents: 'none',

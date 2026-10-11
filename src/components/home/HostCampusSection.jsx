@@ -82,7 +82,7 @@ export default function HostCampusSection() {
               borderRadius: 22,
               overflow: 'hidden',
               border: '1px solid var(--crx-border)',
-              background: '#0A0A0A',
+              background: '#160509',
             }}
           >
             <CampusBlueprint />

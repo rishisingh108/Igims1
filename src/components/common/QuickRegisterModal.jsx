@@ -45,11 +45,11 @@ export default function QuickRegisterModal({ eventName, eventCat, participant, o
           position: 'relative',
           width: '100%',
           maxWidth: 480,
-          background: 'linear-gradient(160deg, #190808 0%, #0A0505 100%)',
-          border: '1px solid rgba(220,38,38,0.35)',
+          background: 'linear-gradient(160deg, #2E0B14 0%, #160509 100%)',
+          border: '1px solid rgba(230, 57, 38, 0.35)',
           borderRadius: 20,
           padding: '32px 28px',
-          boxShadow: '0 24px 80px rgba(0,0,0,0.8), 0 0 80px rgba(220,38,38,0.1)',
+          boxShadow: '0 24px 80px rgba(0,0,0,0.8), 0 0 80px rgba(230, 57, 38, 0.12)',
         }}
       >
         {/* Glow */}
@@ -60,7 +60,7 @@ export default function QuickRegisterModal({ eventName, eventCat, participant, o
             right: -40,
             width: 160,
             height: 160,
-            background: 'rgba(220,38,38,0.12)',
+            background: 'rgba(230, 57, 38, 0.14)',
             filter: 'blur(50px)',
             borderRadius: '50%',
             pointerEvents: 'none',

@@ -79,7 +79,7 @@ export default function IntroAnimation({ onComplete, onWipeStart }) {
       {stage === 'loading' && <Preloader onDone={handleLoaderDone} />}
       
       {stage === 'auth' && (
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020101' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#140508' }}>
           <AuthForm onSuccess={startWipe} />
         </div>
       )}
@@ -88,10 +88,10 @@ export default function IntroAnimation({ onComplete, onWipeStart }) {
         <>
           {/* Four-panel curtain that shrinks outward, opening a hole in the
               middle. */}
-          <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: `${insetY}%`, background: '#020101' }} />
-          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: `${insetY}%`, background: '#020101' }} />
-          <div style={{ position: 'absolute', left: 0, top: `${insetY}%`, bottom: `${insetY}%`, width: `${insetX}%`, background: '#020101' }} />
-          <div style={{ position: 'absolute', right: 0, top: `${insetY}%`, bottom: `${insetY}%`, width: `${insetX}%`, background: '#020101' }} />
+          <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: `${insetY}%`, background: '#140508' }} />
+          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: `${insetY}%`, background: '#140508' }} />
+          <div style={{ position: 'absolute', left: 0, top: `${insetY}%`, bottom: `${insetY}%`, width: `${insetX}%`, background: '#140508' }} />
+          <div style={{ position: 'absolute', right: 0, top: `${insetY}%`, bottom: `${insetY}%`, width: `${insetX}%`, background: '#140508' }} />
 
           {/* Animated glowing border around the transparent hole */}
           <div
@@ -101,8 +101,8 @@ export default function IntroAnimation({ onComplete, onWipeStart }) {
               top: `${insetY}%`,
               right: `${insetX}%`,
               bottom: `${insetY}%`,
-              border: `2px solid rgba(192, 57, 43, ${0.8 - frameScale * 0.6})`,
-              boxShadow: `0 0 ${20 + frameScale * 30}px rgba(192, 57, 43, ${0.4 - frameScale * 0.3}), inset 0 0 ${10 + frameScale * 20}px rgba(192, 24, 90, ${0.2 - frameScale * 0.15})`,
+              border: `2px solid rgba(230, 57, 38, ${0.85 - frameScale * 0.65})`,
+              boxShadow: `0 0 ${20 + frameScale * 30}px rgba(230, 57, 38, ${0.5 - frameScale * 0.35}), inset 0 0 ${10 + frameScale * 20}px rgba(216, 27, 96, ${0.25 - frameScale * 0.18})`,
             }}
           />
         </>

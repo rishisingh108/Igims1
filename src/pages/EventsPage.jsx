@@ -139,12 +139,12 @@ export default function EventsPage({ setPage }) {
         }));
 
   const cardGradients = [
-    'linear-gradient(160deg, #3D0B14 0%, #0A0505 100%)',
-    'linear-gradient(160deg, #2E0A12 0%, #0A0505 100%)',
-    'linear-gradient(160deg, #3B0F1D 0%, #0A0505 100%)',
-    'linear-gradient(160deg, #350A0F 0%, #0A0505 100%)',
-    'linear-gradient(160deg, #33101A 0%, #0A0505 100%)',
-    'linear-gradient(160deg, #241010 0%, #0A0505 100%)',
+    'linear-gradient(160deg, #4A101C 0%, #1A060C 100%)',
+    'linear-gradient(160deg, #3D0E18 0%, #16050A 100%)',
+    'linear-gradient(160deg, #421224 0%, #18060E 100%)',
+    'linear-gradient(160deg, #3E1410 0%, #180706 100%)',
+    'linear-gradient(160deg, #440E1B 0%, #1B070D 100%)',
+    'linear-gradient(160deg, #2D0C14 0%, #140509 100%)',
   ];
 
   return (
@@ -190,13 +190,13 @@ export default function EventsPage({ setPage }) {
             right: 28,
             zIndex: 300,
             maxWidth: 380,
-            background: 'linear-gradient(135deg, #1C0808 0%, #0D0505 100%)',
+            background: 'linear-gradient(135deg, #2A0910 0%, #140508 100%)',
             border: toast.type === 'info'
               ? '1px solid rgba(56,189,248,0.4)'
               : toast.type === 'error'
-              ? '1px solid #DC2626'
+              ? '1px solid #E63926'
               : '1px solid rgba(34,197,94,0.5)',
-            boxShadow: '0 16px 40px rgba(0,0,0,0.8), 0 0 30px rgba(220,38,38,0.15)',
+            boxShadow: '0 16px 40px rgba(0,0,0,0.8), 0 0 30px rgba(230, 57, 38, 0.2)',
             borderRadius: 14,
             padding: '16px 20px',
             display: 'flex',
@@ -213,7 +213,7 @@ export default function EventsPage({ setPage }) {
               background: toast.type === 'info'
                 ? 'rgba(56,189,248,0.15)'
                 : toast.type === 'error'
-                ? 'rgba(220,38,38,0.2)'
+                ? 'rgba(192, 57, 43,0.2)'
                 : 'rgba(34,197,94,0.15)',
               display: 'flex',
               alignItems: 'center',
@@ -257,8 +257,8 @@ export default function EventsPage({ setPage }) {
                 <div
                   onClick={() => setPage && setPage('dashboard')}
                   style={{
-                    background: 'rgba(220,38,38,0.08)',
-                    border: '1px solid rgba(220,38,38,0.25)',
+                    background: 'rgba(192, 57, 43,0.08)',
+                    border: '1px solid rgba(192, 57, 43,0.25)',
                     borderRadius: 14,
                     padding: '12px 18px',
                     display: 'flex',
@@ -289,11 +289,11 @@ export default function EventsPage({ setPage }) {
               onClick={() => setActiveCat('all')}
               className='crx-btn'
               style={{
-                background: activeCat === 'all' ? 'linear-gradient(135deg, var(--cyan), var(--cyan-dark))' : 'rgba(179,18,58,0.08)',
-                border: activeCat === 'all' ? '1px solid var(--cyan)' : '1px solid rgba(179,18,58,0.2)',
+                background: activeCat === 'all' ? 'linear-gradient(135deg, var(--cyan), var(--cyan-dark))' : 'rgba(230, 57, 38, 0.08)',
+                border: activeCat === 'all' ? '1px solid var(--cyan)' : '1px solid rgba(230, 57, 38, 0.25)',
                 color: activeCat === 'all' ? '#fff' : 'var(--paper)',
                 padding: '9px 18px', fontSize: 11.5,
-                boxShadow: activeCat === 'all' ? '0 0 15px rgba(179,18,58,0.4)' : 'none',
+                boxShadow: activeCat === 'all' ? '0 0 15px rgba(230, 57, 38, 0.45)' : 'none',
               }}
             >
               All Cases
@@ -304,9 +304,9 @@ export default function EventsPage({ setPage }) {
                 onClick={() => setActiveCat(c.key)}
                 className='crx-btn'
                 style={{
-                  background: activeCat === c.key ? 'linear-gradient(135deg, var(--gold), var(--gold-dark))' : 'rgba(179,18,58,0.08)',
-                  border: activeCat === c.key ? '1px solid var(--gold)' : '1px solid rgba(179,18,58,0.2)',
-                  color: activeCat === c.key ? '#020101' : 'var(--paper)',
+                  background: activeCat === c.key ? 'linear-gradient(135deg, var(--gold), var(--gold-dark))' : 'rgba(230, 57, 38, 0.08)',
+                  border: activeCat === c.key ? '1px solid var(--gold)' : '1px solid rgba(230, 57, 38, 0.25)',
+                  color: activeCat === c.key ? '#140508' : 'var(--paper)',
                   padding: '9px 18px', fontSize: 11.5,
                   boxShadow: activeCat === c.key ? '0 0 15px rgba(140,107,61,0.4)' : 'none',
                   whiteSpace: 'nowrap',
@@ -346,7 +346,7 @@ export default function EventsPage({ setPage }) {
                       {ev.cat}
                     </Sticker>
 
-                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '14px', background: 'linear-gradient(0deg, rgba(10,5,5,0.98) 0%, rgba(10,5,5,0.7) 60%, transparent 100%)' }}>
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '14px', background: 'linear-gradient(0deg, rgba(20, 5, 8, 0.98) 0%, rgba(20, 5, 8, 0.72) 60%, transparent 100%)' }}>
                       <p style={{ margin: '0 0 10px', fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{ev.name}</p>
 
                       <button
@@ -361,15 +361,15 @@ export default function EventsPage({ setPage }) {
                           background: isRegistered
                             ? 'rgba(34,197,94,0.15)'
                             : user && profile
-                            ? 'linear-gradient(135deg, rgba(220,38,38,0.25), rgba(220,38,38,0.1))'
-                            : 'rgba(220,38,38,0.15)',
+                            ? 'linear-gradient(135deg, rgba(192, 57, 43,0.25), rgba(192, 57, 43,0.1))'
+                            : 'rgba(192, 57, 43,0.15)',
                           border: isRegistered
                             ? '1px solid rgba(34,197,94,0.5)'
-                            : '1px solid rgba(220,38,38,0.4)',
+                            : '1px solid rgba(192, 57, 43,0.4)',
                           color: isRegistered ? '#86efac' : '#fca5a5',
                           boxShadow: isRegistered
                             ? '0 0 12px rgba(34,197,94,0.15)'
-                            : '0 0 10px rgba(220,38,38,0.08)',
+                            : '0 0 10px rgba(192, 57, 43,0.08)',
                           letterSpacing: 1,
                           cursor: 'pointer',
                           gap: 6,

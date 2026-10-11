@@ -31,15 +31,15 @@ export default function AccommodationPage() {
               display: 'grid',
               gridTemplateColumns: narrow ? '1fr 1fr' : 'repeat(3,1fr)',
               gap: 1,
-              background: 'rgba(255,255,255,0.08)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(230, 57, 38, 0.18)',
+              border: '1px solid rgba(230, 57, 38, 0.22)',
               borderRadius: 16,
               overflow: 'hidden',
               marginBottom: 70,
             }}
           >
             {ACCOMMODATION_FACTS.map((f) => (
-              <div key={f.label} style={{ background: '#0A0505', padding: '22px 20px' }}>
+              <div key={f.label} style={{ background: '#1A060B', padding: '22px 20px' }}>
                 <p
                   style={{
                     fontSize: 10,
@@ -78,8 +78,8 @@ export default function AccommodationPage() {
                   display: 'flex',
                   gap: 18,
                   alignItems: 'flex-start',
-                  background: 'linear-gradient(160deg, #181212 0%, #0A0505 100%)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'linear-gradient(160deg, #280910 0%, #160509 100%)',
+                  border: '1px solid rgba(230, 57, 38, 0.22)',
                   borderRadius: 14,
                   padding: '20px 22px',
                 }}
@@ -90,14 +90,14 @@ export default function AccommodationPage() {
                     height: 34,
                     flexShrink: 0,
                     borderRadius: '50%',
-                    background: 'rgba(220,38,38,0.14)',
-                    border: '1px solid rgba(220,38,38,0.4)',
+                    background: 'rgba(230, 57, 38, 0.14)',
+                    border: '1px solid rgba(230, 57, 38, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: 13,
                     fontWeight: 800,
-                    color: '#DC2626',
+                    color: '#C0392B',
                   }}
                 >
                   {i + 1}
@@ -117,13 +117,13 @@ export default function AccommodationPage() {
               display: 'flex',
               alignItems: 'center',
               gap: 16,
-              background: 'rgba(220,38,38,0.06)',
-              border: '1px solid rgba(220,38,38,0.25)',
+              background: 'rgba(192, 57, 43,0.06)',
+              border: '1px solid rgba(192, 57, 43,0.25)',
               borderRadius: 14,
               padding: '20px 24px',
             }}
           >
-            <BedDouble size={26} color="#DC2626" style={{ flexShrink: 0 }} />
+            <BedDouble size={26} color="#C0392B" style={{ flexShrink: 0 }} />
             <p style={{ fontSize: 13.5, color: 'var(--paper)', margin: 0, lineHeight: 1.7 }}>
               Accommodation is limited and offered on a first-come basis to confirmed delegates. We recommend
               registering early if you plan to stay on campus.
