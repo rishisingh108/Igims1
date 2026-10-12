@@ -19,12 +19,13 @@ function NightCard({ n, i }) {
     <Reveal delay={i * 0.08}>
       <div
         style={{
-          background: 'linear-gradient(160deg, #200A0A 0%, #0A0505 100%)',
-          border: '1px solid rgba(255,255,255,0.08)',
+          background: 'linear-gradient(160deg, #2D0A14 0%, #160509 100%)',
+          border: '1px solid rgba(230, 57, 38, 0.22)',
           borderRadius: '18px 18px 14px 14px',
           padding: '26px 22px',
           height: '100%',
           position: 'relative',
+          boxShadow: '0 8px 28px rgba(0,0,0,0.45)',
         }}
       >
         <div
@@ -32,15 +33,15 @@ function NightCard({ n, i }) {
             width: 46,
             height: 46,
             borderRadius: 12,
-            background: 'rgba(220,38,38,0.12)',
-            border: '1px solid rgba(220,38,38,0.35)',
+            background: 'rgba(230, 57, 38, 0.14)',
+            border: '1px solid rgba(230, 57, 38, 0.38)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 18,
           }}
         >
-          <Icon size={20} color="#DC2626" />
+          <Icon size={20} color="#E63926" />
         </div>
         <p
           style={{
@@ -59,7 +60,7 @@ function NightCard({ n, i }) {
         </h3>
         <p style={{ fontSize: 13.5, color: 'var(--muted)', lineHeight: 1.7, margin: '0 0 16px' }}>{n.text}</p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'var(--paper)' }}>
-          <Calendar size={13} color="#DC2626" /> {n.date}
+          <Calendar size={13} color="#E63926" /> {n.date}
         </div>
       </div>
     </Reveal>
@@ -76,11 +77,12 @@ function ArtistSpotlight({ a, i, narrow }) {
           gridTemplateColumns: narrow ? '1fr' : reverse ? '1fr 1.1fr' : '1.1fr 1fr',
           gap: 0,
           alignItems: 'stretch',
-          border: '1px solid rgba(255,255,255,0.08)',
+          border: '1px solid rgba(230, 57, 38, 0.22)',
           borderRadius: 18,
           overflow: 'hidden',
           marginBottom: 20,
-          background: '#0A0505',
+          background: '#180509',
+          boxShadow: '0 10px 32px rgba(0,0,0,0.5)',
         }}
       >
         <div
@@ -97,7 +99,7 @@ function ArtistSpotlight({ a, i, narrow }) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(10,5,5,0.15) 0%, rgba(10,5,5,0.55) 100%)',
+              background: 'linear-gradient(180deg, rgba(20, 5, 8, 0.15) 0%, rgba(20, 5, 8, 0.6) 100%)',
             }}
           />
         </div>

@@ -19,14 +19,14 @@ export default function DynamicBackground() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Particle colors extracted directly from the logo:
-    // Cyan/Azure (hair & cosmic halo), Gold/Amber (crown & glowing eyes), and Pale Starlight
+    // Particle colors extracted from the new logo:
+    // Pure Vermillion, Sacred Amber, Crown Rubellite Magenta, Sapphire Blue, and Royal Gold
     const colors = [
-      'rgba(179, 18, 58, ',    // ruby
-      'rgba(230, 57, 80, ',    // ruby glow
-      'rgba(176, 141, 87, ',   // antique gold
-      'rgba(212, 175, 106, ',  // champagne gold
-      'rgba(232, 214, 208, ',  // bone / ash white
+      'rgba(230, 57, 38, ',    // pure vermillion red
+      'rgba(226, 126, 63, ',   // sacred amber / parchment glow
+      'rgba(216, 27, 96, ',    // rubellite magenta
+      'rgba(0, 119, 216, ',    // sapphire blue
+      'rgba(229, 168, 59, ',   // royal crown gold
     ];
 
     const count = Math.min(width > 768 ? 65 : 35, 80);
@@ -65,7 +65,7 @@ export default function DynamicBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 115) {
             const alpha = (1 - dist / 115) * 0.18;
-            ctx.strokeStyle = `rgba(179, 18, 58, ${alpha})`;
+            ctx.strokeStyle = `rgba(230, 57, 38, ${alpha})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -132,20 +132,52 @@ export default function DynamicBackground() {
         overflow: 'hidden',
       }}
     >
-      {/* Ambient wine-red glow only — no gold mixed in to avoid a muddy haze */}
+      {/* Upper sacred ritual halo (warm amber & vermillion glow) */}
       <div
         style={{
           position: 'absolute',
-          top: '-15%',
-          left: '20%',
-          width: '65vw',
-          height: '65vw',
-          maxWidth: 900,
-          maxHeight: 900,
+          top: '-18%',
+          left: '25%',
+          width: '55vw',
+          height: '55vw',
+          maxWidth: 800,
+          maxHeight: 800,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(185, 28, 28, 0.12) 0%, transparent 70%)',
-          filter: 'blur(60px)',
-          animation: 'crx-float 16s ease-in-out infinite alternate',
+          background: 'radial-gradient(circle, rgba(226, 126, 63, 0.16) 0%, rgba(230, 57, 38, 0.18) 45%, transparent 70%)',
+          filter: 'blur(70px)',
+          animation: 'crx-float 18s ease-in-out infinite alternate',
+        }}
+      />
+      {/* Mid-left drifting vermillion atmospheric cloud */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '30%',
+          left: '-10%',
+          width: '45vw',
+          height: '45vw',
+          maxWidth: 650,
+          maxHeight: 650,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(230, 57, 38, 0.14) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+          animation: 'crx-float 22s ease-in-out infinite alternate-reverse',
+        }}
+      />
+      {/* Lower-right rubellite & cinnabar wine warmth */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-10%',
+          right: '-5%',
+          width: '50vw',
+          height: '50vw',
+          maxWidth: 700,
+          maxHeight: 700,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(216, 27, 96, 0.12) 0%, rgba(200, 34, 24, 0.14) 50%, transparent 75%)',
+          filter: 'blur(75px)',
+          animation: 'crx-float 20s ease-in-out infinite alternate',
         }}
       />
       <canvas

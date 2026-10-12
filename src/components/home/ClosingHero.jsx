@@ -8,22 +8,26 @@ export default function ClosingHero({ setPage }) {
         position: 'relative',
         padding: '110px 24px',
         overflow: 'hidden',
-        background: 'radial-gradient(ellipse at 50% 0%, rgba(179, 18, 58, 0.15) 0%, transparent 70%), linear-gradient(160deg, #240C0C 0%, #020101 100%)',
+        width: '100%',
+        maxWidth: '100vw',
+        contain: 'paint',
+        background: 'radial-gradient(ellipse at 50% -10%, rgba(230, 57, 38, 0.28) 0%, rgba(226, 126, 63, 0.14) 40%, transparent 70%), linear-gradient(160deg, #2E0B14 0%, #140508 100%)',
         borderTop: '1px solid var(--hair)',
         borderBottom: '1px solid var(--hair)',
       }}
     >
-      <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1, boxSizing: 'border-box', padding: '0 16px' }}>
         <Sticker tone="gold" rotate={-2} style={{ marginBottom: 20 }}>
           IGIMS's Biggest Annual Fest
         </Sticker>
         <h2
           className="crx-display"
           style={{
-            fontSize: 'clamp(46px,10vw,110px)',
+            fontSize: 'clamp(28px, 9vw, 110px)',
             color: '#fff',
             lineHeight: 0.95,
             margin: '0 0 20px',
+            wordBreak: 'break-word',
           }}
         >
           CEREBREXIA'26

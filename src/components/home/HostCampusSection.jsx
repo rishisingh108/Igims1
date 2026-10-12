@@ -70,7 +70,7 @@ export default function HostCampusSection() {
   ];
 
   return (
-    <section style={{ padding: '30px 20px 100px', position: 'relative' }}>
+    <section style={{ padding: '30px 20px 100px', position: 'relative', overflow: 'hidden', width: '100%', maxWidth: '100vw', contain: 'paint' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto' }}>
         {/* Banner */}
         <Reveal>
@@ -82,7 +82,7 @@ export default function HostCampusSection() {
               borderRadius: 22,
               overflow: 'hidden',
               border: '1px solid var(--crx-border)',
-              background: '#0A0A0A',
+              background: '#160509',
             }}
           >
             <CampusBlueprint />

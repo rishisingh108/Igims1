@@ -19,8 +19,16 @@ export default function App() {
   const [revealHeroTitle, setRevealHeroTitle] = useState(false);
 
   useEffect(() => {
+    // Scroll on page change
     window.scrollTo(0, 0);
   }, [page]);
+
+  useEffect(() => {
+    // Force scroll to top on initial load, bypassing browser's attempt to restore scroll
+    window.scrollTo(0, 0);
+    const timer = setTimeout(() => window.scrollTo(0, 0), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleIntroComplete = useCallback(() => {
     setIntroComplete(true);
@@ -44,15 +52,15 @@ export default function App() {
       <DynamicBackground />
       <div className="crx-dots" />
       <div className="crx-vignette" />
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '100vw', overflowX: 'hidden', contain: 'paint' }}>
         <NavBar page={page} setPage={setPage} />
         {page === 'home' && <HomePage setPage={setPage} revealHeroTitle={revealHeroTitle} />}
-        {page === 'events' && <EventsPage />}
+        {page === 'events' && <EventsPage setPage={setPage} />}
         {page === 'pronites' && <PronitesPage />}
         {page === 'accommodation' && <AccommodationPage />}
         {page === 'team' && <TeamPage />}
         {page === 'contact' && <ContactPage />}
-        {page === 'dashboard' && <DashboardPage />}
+        {page === 'dashboard' && <DashboardPage setPage={setPage} />}
         <Footer setPage={setPage} />
       </div>
       </div>

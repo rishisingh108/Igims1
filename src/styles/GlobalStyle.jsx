@@ -6,72 +6,132 @@ export default function GlobalStyle() {
       @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600&display=swap');
       
       /* ==========================================================================
-         CEREBREXIA '26 - CELESTIAL CROWN COLOR PALETTE (Extracted from Brand Logo)
+         CEREBREXIA '26 - VERMILLION & REDDISH LOGO PALETTE
+         Pure Vermillion · Sacred Amber · Crown Gold · Rubellite Magenta · Sapphire
          ========================================================================== */
       :root {
-        /* Deep Matte Charcoal Void & Abyss */
-        --navy-void: #0A0A0A;
-        --navy-deep: #0D0D0D;
-        --navy-surface: #141212;
-        --navy-card: #181515;
-        --indigo-nebula: #241616;
+        /* Deep Rich Cinnabar & Crimson Wine Backgrounds (Noticeably warm & reddish, never muddy black) */
+        --navy-void: #140508;
+        --navy-deep: #1A060B;
+        --navy-surface: #260910;
+        --navy-card: #2E0B12;
+        --indigo-nebula: #3D0E18;
         
-        /* Blood Crimson & Ruby Glow (Eyes & Ritual Circle) */
-        --cyan: #B3123A;
-        --cyan-glow: #E63950;
-        --cyan-dark: #6E0A22;
-        --azure-deep: #4A0515;
-        
-        /* Royal Topaz & Starlight Gold (Crowned Diadem & Luminous Eyes) */
-        --gold: #B08D57;
-        --gold-glow: #D4AF6A;
-        --gold-amber: #8C6B3D;
-        --gold-dark: #5C4526;
-        
-        /* Ethereal Starlight, Frost & Highlights */
-        --cream: #F7F1E3;
-        --paper: #A1A1AA;
-        --ink: #0A0A0A;
-        --muted: #A1A1AA;
-        --muted-blue: #8B8B94;
-        
-        /* Glowing Hairline Borders & Shadows */
-        --hair: rgba(179, 18, 58, 0.22);
-        --hair-gold: rgba(176, 141, 87, 0.35);
-        --glow-cyan: 0 0 25px rgba(179, 18, 58, 0.4);
-        --glow-gold: 0 0 25px rgba(176, 141, 87, 0.45);
+        /* PRIMARY — Pure Vermillion Red (dominant logo color from fiery aura & brain) */
+        --cyan: #E63926;
+        --cyan-glow: #FF4D38;
+        --cyan-dark: #9E1614;
+        --azure-deep: #2A0810;
+        --crx-red: #E63926;
+        --crx-red-bright: #FF4D38;
+        --crx-red-deep: #9E1614;
+        --crx-vermillion: #E63926;
+        --crx-vermillion-glow: #FF5540;
+        --crx-cinnabar: #C82218;
 
-        /* Competitor Sub-Theme Variables for New Sections */
-        --crx-gold: #fbbf24;
-        --crx-red: #dc2626;
-        --crx-bg: #0a0a0a;
-        --crx-border: rgba(255, 255, 255, 0.1);
-        --crx-text-main: #f8fafc;
-        --crx-text-muted: #94a3b8;
+        /* ACCENT — Sacred Amber & Parchment (from the mystical geometric halo & runic disk) */
+        --crx-orange: #E27E3F;
+        --crx-orange-bright: #F5934E;
+        --crx-parchment-glow: #F0B888;
+
+        /* ACCENT — Rubellite / Hot Magenta (crown gemstone cabochons) */
+        --crx-magenta: #D81B60;
+        --crx-magenta-bright: #F03A7E;
+        --crx-magenta-deep: #8E0E3B;
+
+        /* ACCENT — Sapphire Blue (center crown jewel contrast pop) */
+        --crx-blue: #0077D8;
+        --crx-blue-bright: #2997FF;
+
+        /* Royal Antique Gold (crown filigree arches & diadem) */
+        --gold: #E5A83B;
+        --gold-glow: #F5BE52;
+        --gold-amber: #B87B22;
+        --gold-dark: #6E4610;
+        --crx-gold: #E5A83B;
+
+        /* Text & Neutrals (Warm ivory, cream, and soft parchment) */
+        --cream: #FFF3E8;
+        --paper: #E0CDC0;
+        --ink: #140508;
+        --muted: #A89080;
+        --muted-blue: #8C7668;
+        --crx-text-main: #FFF3E8;
+        --crx-text-muted: #A89080;
+
+        /* Borders & Glows */
+        --hair: rgba(230, 57, 38, 0.32);
+        --hair-vermillion: rgba(230, 57, 38, 0.45);
+        --hair-gold: rgba(229, 168, 59, 0.42);
+        --glow-cyan: 0 0 25px rgba(230, 57, 38, 0.55);
+        --glow-vermillion: 0 0 25px rgba(230, 57, 38, 0.55);
+        --glow-gold: 0 0 25px rgba(229, 168, 59, 0.55);
+        --glow-magenta: 0 0 25px rgba(216, 27, 96, 0.55);
+        --glow-blue: 0 0 25px rgba(0, 119, 216, 0.6);
+
+        /* Shared CRX Design System */
+        --crx-bg: #140508;
+        --crx-surface: #260910;
+        --crx-card-bg: #2E0B12;
+        --crx-border: rgba(230, 57, 38, 0.22);
         --font-serif: 'Playfair Display', serif;
         --font-sans: 'Inter', sans-serif;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
       }
 
       html {
         scroll-behavior: smooth;
         background-color: var(--navy-void);
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       body {
         margin: 0;
         padding: 0;
+        width: 100%;
+        max-width: 100vw;
         background-color: var(--navy-void);
         color: var(--paper);
         overflow-x: hidden;
+        overflow-x: clip;
+        position: relative;
+      }
+
+      #root {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        overflow-x: clip;
+        position: relative;
       }
 
       .crx-root {
         font-family: 'Space Grotesk', sans-serif;
-        background: radial-gradient(ellipse at 50% -10%, #141010 0%, #0A0A0A 45%, #0A0A0A 100%);
+        background:
+          /* Sacred halo radiance at the top (from logo's parchment runic disk) */
+          radial-gradient(ellipse 85% 45% at 50% -2%, rgba(226, 126, 63, 0.22) 0%, rgba(230, 57, 38, 0.24) 38%, rgba(160, 20, 28, 0.12) 65%, transparent 85%),
+          /* Flowing mid-ground vermillion clouds */
+          radial-gradient(ellipse 65% 50% at 12% 28%, rgba(230, 57, 38, 0.16) 0%, transparent 60%),
+          radial-gradient(ellipse 65% 50% at 88% 46%, rgba(200, 34, 24, 0.16) 0%, transparent 60%),
+          /* Crimson & ruby gem aura */
+          radial-gradient(ellipse 70% 45% at 50% 70%, rgba(216, 27, 96, 0.11) 0%, rgba(230, 57, 38, 0.12) 35%, transparent 70%),
+          /* Bottom deep vermillion mist */
+          radial-gradient(ellipse 80% 40% at 50% 100%, rgba(190, 25, 30, 0.22) 0%, transparent 75%),
+          /* Foundational rich cinnabar-wine gradient */
+          linear-gradient(180deg, #180508 0%, #1B060C 25%, #150508 55%, #1A060C 80%, #120406 100%);
         color: var(--paper);
         min-height: 100vh;
+        width: 100%;
+        max-width: 100vw;
         position: relative;
         overflow-x: hidden;
+        overflow-x: clip;
       }
 
       .crx-display {
@@ -88,15 +148,15 @@ export default function GlobalStyle() {
         outline-offset: 3px;
       }
 
-      /* Ambient background dust & vignetting — deep wine glow only, no muddy gold mix */
+      /* Ambient background dust & vignetting — warm vermillion + magenta atmospheric glow */
       .crx-dots {
         position: fixed;
         inset: 0;
         z-index: 0;
         pointer-events: none;
-        background-image: radial-gradient(rgba(179, 18, 58, 0.14) 1px, transparent 1.5px);
-        background-size: 34px 34px;
-        opacity: 0.45;
+        background-image: radial-gradient(rgba(230, 57, 38, 0.18) 1.2px, transparent 1.6px);
+        background-size: 32px 32px;
+        opacity: 0.65;
       }
 
       .crx-vignette {
@@ -104,7 +164,7 @@ export default function GlobalStyle() {
         inset: 0;
         z-index: 0;
         pointer-events: none;
-        background: radial-gradient(ellipse at 50% 0%, rgba(185, 28, 28, 0.10), transparent 60%);
+        background: radial-gradient(ellipse at 50% 10%, rgba(230, 57, 38, 0.16) 0%, rgba(216, 27, 96, 0.08) 45%, transparent 75%);
       }
 
       /* Angled Festival Sticker Badges */
@@ -122,6 +182,7 @@ export default function GlobalStyle() {
         border: 1px solid rgba(212, 175, 85, 0.3);
         color: #E5C07B;
         box-shadow: none;
+        max-width: 100%;
       }
 
       /* All tones render identically now — one unified design system, no solid fills */
@@ -177,25 +238,25 @@ export default function GlobalStyle() {
       }
 
       .crx-btn.gold {
-        background: #DC2626;
+        background: linear-gradient(135deg, #E63926 0%, #D81B60 50%, #E5A83B 100%);
         color: #FFFFFF;
-        box-shadow: 0 4px 20px rgba(220, 38, 38, 0.35);
+        box-shadow: 0 4px 22px rgba(230, 57, 38, 0.55);
       }
 
       .crx-btn.orange,
       .crx-btn.cyan {
-        background: rgba(212, 175, 106, 0.08);
+        background: rgba(230, 57, 38, 0.12);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(212, 175, 106, 0.4);
-        color: #F5EDE0;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+        border: 1px solid rgba(230, 57, 38, 0.45);
+        color: #FFF3E8;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.35);
       }
 
       .crx-btn.orange:hover,
       .crx-btn.cyan:hover {
-        background: rgba(212, 175, 106, 0.16);
-        border-color: rgba(212, 175, 106, 0.7);
+        background: rgba(230, 57, 38, 0.22);
+        border-color: rgba(230, 57, 38, 0.8);
       }
 
       /* Continuous Marquee Tickers */
@@ -237,8 +298,8 @@ export default function GlobalStyle() {
 
       .crx-card:hover {
         transform: translateY(-4px);
-        border-color: rgba(220, 38, 38, 0.5) !important;
-        box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+        border-color: rgba(230, 57, 38, 0.6) !important;
+        box-shadow: 0 14px 35px -8px rgba(230, 57, 38, 0.35);
       }
 
       .crx-idcard {
@@ -247,7 +308,7 @@ export default function GlobalStyle() {
 
       .crx-idcard:hover {
         transform: translateY(-5px) rotate(0.6deg);
-        box-shadow: 0 20px 35px -10px rgba(179, 18, 58, 0.25);
+        box-shadow: 0 20px 35px -10px rgba(230, 57, 38, 0.35);
       }
 
       .crx-social {
@@ -282,7 +343,7 @@ export default function GlobalStyle() {
       }
       input:focus, textarea:focus {
         border-color: var(--cyan) !important;
-        box-shadow: 0 0 0 3px rgba(179, 18, 58, 0.25) !important;
+        box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.25) !important;
       }
 
       /* Floating Ambient Keyframe Animations */
@@ -293,9 +354,10 @@ export default function GlobalStyle() {
       }
 
       @keyframes crx-pulse-glow {
-        0% { filter: drop-shadow(0 0 10px rgba(179, 18, 58, 0.4)); }
-        50% { filter: drop-shadow(0 0 25px rgba(176, 141, 87, 0.6)); }
-        100% { filter: drop-shadow(0 0 10px rgba(179, 18, 58, 0.4)); }
+        0%   { filter: drop-shadow(0 0 10px rgba(192, 57, 43, 0.5)); }
+        33%  { filter: drop-shadow(0 0 20px rgba(192, 24, 90, 0.5)); }
+        66%  { filter: drop-shadow(0 0 25px rgba(201, 151, 58, 0.6)); }
+        100% { filter: drop-shadow(0 0 10px rgba(192, 57, 43, 0.5)); }
       }
 
       /* Glitch title reveal — tiny jitter while resolving */
@@ -356,6 +418,124 @@ export default function GlobalStyle() {
         .crx-mascot-beam,
         .crx-mascot-halo {
           animation: none !important;
+        }
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+
+      /* ====================================================================
+         NAVBAR GLASSMORPHISM & SCROLL BEHAVIOR
+         ==================================================================== */
+      header.crx-nav-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        padding: 20px 32px;
+        transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      }
+
+      header.crx-nav-header.scrolled {
+        background: rgba(20, 5, 8, 0.94);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(230, 57, 38, 0.28);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        padding: 14px 32px;
+      }
+
+      .crx-mobile-break {
+        display: none;
+      }
+
+      /* ====================================================================
+         MOBILE RESPONSIVENESS
+         ==================================================================== */
+
+      /* Prevent horizontal scroll everywhere */
+      html, body, #root, .crx-root {
+        overflow-x: hidden !important;
+        overflow-x: clip !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+      }
+
+      /* Ensure touch targets and mobile spacing */
+      @media (max-width: 768px) {
+        .crx-mobile-break {
+          display: inline;
+        }
+
+        header.crx-nav-header {
+          padding: 10px 16px !important;
+          background: rgba(20, 5, 8, 0.90);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          border-bottom: 1px solid rgba(230, 57, 38, 0.24);
+        }
+
+        header.crx-nav-header.scrolled {
+          padding: 10px 16px !important;
+          background: rgba(20, 5, 8, 0.97);
+          border-bottom: 1px solid rgba(230, 57, 38, 0.4);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+        }
+
+        .crx-logo-badge {
+          width: 42px !important;
+          height: 42px !important;
+          border-radius: 12px !important;
+        }
+
+        .crx-hamburger-btn {
+          width: 42px !important;
+          height: 42px !important;
+          border-radius: 12px !important;
+        }
+
+        .crx-director-grid {
+          grid-template-columns: 1fr !important;
+          gap: 28px !important;
+          text-align: center;
+        }
+
+        .crx-btn {
+          padding: 14px 20px;
+          font-size: 12px;
+          min-height: 44px;
+        }
+
+        .crx-sticker {
+          font-size: 10px !important;
+          padding: 6px 12px !important;
+          white-space: normal !important;
+          text-align: center !important;
+          word-break: normal !important;
+          max-width: 90vw !important;
+          line-height: 1.35 !important;
+        }
+
+        .crx-stat-badge {
+          font-size: 0.65rem;
+          padding: 5px 10px;
+        }
+      }
+
+      /* Small phones (under 400px) */
+      @media (max-width: 400px) {
+        .crx-btn {
+          padding: 12px 16px;
+          font-size: 11px;
+          letter-spacing: 0.4px;
+        }
+
+        .crx-sticker {
+          font-size: 9px !important;
+          letter-spacing: 0.6px !important;
+          padding: 5px 10px !important;
         }
       }
     `}</style>

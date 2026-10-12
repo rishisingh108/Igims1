@@ -38,13 +38,13 @@ export default function TeamPage() {
               <div
                 className="crx-idcard"
                 style={{
-                  background: 'linear-gradient(160deg, #181212 0%, #0A0505 100%)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: 'linear-gradient(160deg, #2A0910 0%, #160509 100%)',
+                  border: '1px solid rgba(230, 57, 38, 0.22)',
                   borderRadius: '18px 18px 14px 14px',
                   padding: '20px 16px',
                   textAlign: 'center',
                   position: 'relative',
-                  boxShadow: '0 12px 28px rgba(0,0,0,0.5)',
+                  boxShadow: '0 12px 28px rgba(0,0,0,0.5), 0 0 20px rgba(230, 57, 38, 0.08)',
                 }}
               >
                 <div

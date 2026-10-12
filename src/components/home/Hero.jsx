@@ -14,14 +14,21 @@ export default function Hero({ setPage, revealTitle = true }) {
       <section
         style={{
           minHeight: '100vh',
+          width: '100%',
+          maxWidth: '100vw',
+          boxSizing: 'border-box',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          padding: '120px 20px 60px',
+          paddingTop: 'clamp(80px, 15vh, 120px)',
+          paddingBottom: 60,
+          paddingLeft: 16,
+          paddingRight: 16,
           position: 'relative',
           overflow: 'hidden',
+          contain: 'paint',
         }}
       >
         {/* CSS for Ken Burns Effect */}
@@ -33,128 +40,165 @@ export default function Hero({ setPage, revealTitle = true }) {
             }
           `}
         </style>
-        {/* Full-screen video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+
+        {/* Contained Video Background Layer to prevent Ken Burns scale from leaking overflow */}
+        <div
           style={{
             position: 'absolute',
             inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.95,
-            filter: 'contrast(1.05) saturate(1.15)',
-            animation: 'kenburns 25s ease-in-out infinite alternate',
+            overflow: 'hidden',
+            contain: 'paint',
+            pointerEvents: 'none',
             zIndex: 0,
           }}
         >
-          <source src="/events-bg.mp4" type="video/mp4" />
-        </video>
+          {/* Full-screen video background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              opacity: 0.95,
+              filter: 'contrast(1.05) saturate(1.15)',
+              animation: 'kenburns 25s ease-in-out infinite alternate',
+              zIndex: 0,
+            }}
+          >
+            <source src="/events-bg.mp4" type="video/mp4" />
+          </video>
 
-        {/* Red Color-Tint Layer — shifts the raw footage's blue stage lighting toward the crimson theme */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(190, 20, 35, 0.12)',
-            mixBlendMode: 'color',
-            zIndex: 0,
-            pointerEvents: 'none',
-          }}
-        />
+          {/* Vermillion Color-Tint Layer */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'rgba(230, 57, 38, 0.16)',
+              mixBlendMode: 'color',
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          />
 
-        {/* Light multiply pass — just enough to settle any leftover blue/purple, without crushing the footage */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(20, 4, 6, 0.1)',
-            mixBlendMode: 'multiply',
-            zIndex: 0,
-            pointerEvents: 'none',
-          }}
-        />
+          {/* Light multiply pass with cinnabar undertone */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'rgba(28, 7, 11, 0.12)',
+              mixBlendMode: 'multiply',
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          />
 
-        {/* Cosmic Vignette Overlay — matches the navy/cyan/gold theme used site-wide */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: `
-              radial-gradient(ellipse at 50% 0%, rgba(179, 18, 58, 0.1), transparent 55%),
-              radial-gradient(ellipse at 50% 50%, rgba(10, 5, 5, 0.2) 0%, rgba(10, 5, 5, 0.42) 65%, rgba(10, 5, 5, 0.72) 100%),
-              linear-gradient(180deg, rgba(10, 5, 5, 0.45) 0%, rgba(10, 5, 5, 0.1) 25%, rgba(10, 5, 5, 0.1) 75%, rgba(10, 5, 5, 0.78) 100%)
-            `,
-            zIndex: 1,
-            pointerEvents: 'none',
-          }}
-        />
+          {/* Vermillion & Crimson Vignette Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `
+                radial-gradient(ellipse at 50% 0%, rgba(230, 57, 38, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(20, 5, 8, 0.2) 0%, rgba(20, 5, 8, 0.45) 65%, rgba(20, 5, 8, 0.75) 100%),
+                linear-gradient(180deg, rgba(20, 5, 8, 0.45) 0%, rgba(20, 5, 8, 0.08) 25%, rgba(20, 5, 8, 0.08) 75%, rgba(20, 5, 8, 0.82) 100%)
+              `,
+              zIndex: 1,
+              pointerEvents: 'none',
+            }}
+          />
 
-        {/* Subtle Film Grain / Scanline Texture */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 3px)',
-            opacity: 0.35,
-            zIndex: 2,
-            pointerEvents: 'none',
-          }}
-        />
+          {/* Subtle Film Grain / Scanline Texture */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 3px)',
+              opacity: 0.35,
+              zIndex: 2,
+              pointerEvents: 'none',
+            }}
+          />
+        </div>
 
         {/* Foreground Content */}
         <div
           style={{
             position: 'relative',
             zIndex: 10,
+            width: '100%',
             maxWidth: 1180,
+            boxSizing: 'border-box',
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {/* Tagline Sticker Badge — same component used across the rest of the site */}
-          <Sticker tone="gold" rotate={0} style={{ marginBottom: 22, fontSize: 11.5 }}>
-            India's Biggest Medical College Cultural Festival
+          <Sticker
+            tone="gold"
+            rotate={0}
+            style={{
+              marginBottom: 22,
+              fontSize: 'clamp(9.5px, 2.6vw, 11.5px)',
+              letterSpacing: '1px',
+              maxWidth: '92vw',
+              lineHeight: 1.45,
+              whiteSpace: 'normal',
+              textAlign: 'center',
+              boxSizing: 'border-box',
+              display: 'inline-block',
+            }}
+          >
+            India's Biggest Medical College <br className="crx-mobile-break" />Cultural Festival
           </Sticker>
 
           {/* Giant Centerpiece Title */}
           <div
             style={{
               position: 'relative',
-              width: '100vw',
+              width: '100%',
               maxWidth: 1100,
+              boxSizing: 'border-box',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              margin: '10px 0 24px',
+              margin: '10px auto 24px',
             }}
           >
             <div
               style={{
-                padding: '10px 24px',
+                padding: '10px 14px',
                 width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                textAlign: 'center',
               }}
             >
-              <h1 style={{ margin: 0, lineHeight: 1 }}>
+              <h1 style={{ margin: '0 auto', lineHeight: 1, maxWidth: '100%', textAlign: 'center' }}>
                 {titleSettled ? (
                   <span
                     style={{
                       color: 'var(--cream)',
                       fontFamily: "'Anton', 'Impact', sans-serif",
-                      fontSize: 'clamp(52px, 11vw, 135px)',
+                      fontSize: 'clamp(28px, 9.5vw, 120px)',
                       fontWeight: 900,
                       lineHeight: 1,
                       letterSpacing: '2px',
                       textTransform: 'uppercase',
-                      whiteSpace: 'nowrap',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      textAlign: 'center',
+                      display: 'inline-block',
                       textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.9)',
                     }}
                   >
@@ -172,12 +216,15 @@ export default function Hero({ setPage, revealTitle = true }) {
                     style={{
                       color: 'var(--cream)',
                       fontFamily: "'Anton', 'Impact', sans-serif",
-                      fontSize: 'clamp(52px, 11vw, 135px)',
+                      fontSize: 'clamp(28px, 9.5vw, 120px)',
                       fontWeight: 900,
                       lineHeight: 1,
                       letterSpacing: '2px',
                       textTransform: 'uppercase',
-                      whiteSpace: 'nowrap',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      textAlign: 'center',
+                      display: 'inline-block',
                       textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.9)',
                     }}
                   />
@@ -190,23 +237,29 @@ export default function Hero({ setPage, revealTitle = true }) {
           <div
             style={{
               display: 'flex',
-              alignItems: 'flex-start',
-              gap: 14,
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
               maxWidth: 600,
+              boxSizing: 'border-box',
               textAlign: 'center',
               margin: '0 auto 34px',
               padding: '0 16px',
-              justifyContent: 'center',
             }}
           >
             <p
               style={{
-                margin: 0,
+                margin: '0 auto',
+                width: '100%',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
                 fontSize: 'clamp(13px, 1.8vw, 15.5px)',
                 lineHeight: 1.65,
                 color: 'var(--paper)',
                 fontWeight: 500,
                 fontFamily: "'Space Grotesk', sans-serif",
+                wordBreak: 'break-word',
+                textAlign: 'center',
               }}
             >
               Four days. Hundreds of stages. One incredible story, and you're in it. The 51st edition returns louder than ever.
@@ -219,6 +272,9 @@ export default function Hero({ setPage, revealTitle = true }) {
               display: 'flex',
               gap: 16,
               justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              margin: '0 auto',
               flexWrap: 'wrap',
             }}
           >

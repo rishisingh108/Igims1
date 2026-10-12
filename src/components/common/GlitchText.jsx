@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#$%&XZQK▓▒░';
 
@@ -86,7 +86,7 @@ export default function GlitchText({
           inset: 0,
           ...(glitching
             ? {
-                textShadow: '2px 0 #E63950, -2px 0 #D4AF6A, 0 2px 12px rgba(179, 18, 58, 0.35)',
+                textShadow: '2px 0 #E74C3C, -2px 0 #D4AF6A, 0 2px 12px rgba(192, 57, 43, 0.35)',
                 animation: 'crx-glitch-jitter .12s steps(2) infinite',
               }
             : done
